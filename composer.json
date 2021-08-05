@@ -1,0 +1,42 @@
+{
+    "name": "horde/eventdispatcher",
+    "description": "A simple PSR-14 EventDispatcher / ListenerProvider system for Horde",
+    "type": "library",
+    "homepage": "https://www.horde.org",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Ralf Lang",
+            "email": "lang@b1-systems.de",
+            "role": "lead"
+        }
+    ],
+    "time": "2021-08-05",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://horde-satis.maintaina.com/"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8",
+        "horde/exception": "^3 || dev-FRAMEWORK_6_0",
+        "psr/event-dispatcher": "1.0.0",
+        "fig/event-dispatcher-util": "^1.3",
+        "ext-pcre": "*",
+        "ext-simplexml": "*",
+        "ext-spl": "*"
+    },
+    "require-dev": {},
+    "suggest": {},
+    "autoload": {
+        "psr-4": {
+            "Horde\\EventDispatcher\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Horde\\EventDispatcher\\Test\\": "test/"
+        }
+    }
+}

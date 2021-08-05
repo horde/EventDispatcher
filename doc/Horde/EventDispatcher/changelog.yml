@@ -1,0 +1,12 @@
+---
+1.0.0alpha1:
+  api: 1.0.0alpha1
+  state:
+    release: alpha1
+    api: alpha1
+  date: 2021-08-05
+  license:
+    identifier: BSD-3-Clause
+    uri: http://www.horde.org/licenses/bsd
+  notes: |
+    [rla] First alpha release.
