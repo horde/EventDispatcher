@@ -19,7 +19,7 @@ use Psr\EventDispatcher\ListenerProviderInterface;
  *
  * A basic container of Listeners
  * All listeners are returned that match any of the event's interfaces
- * 
+ *
  * @author    Ralf Lang <lang@b1-systems.de>
  * @category  Horde
  * @copyright 2021 Horde LLC
@@ -47,7 +47,7 @@ class SimpleListenerProvider implements ListenerProviderInterface
 
     /**
      * Filter the list of relevant listeners for this event
-     * 
+     *
      * @param object $event
      *   An event for which to return the relevant listeners.
      * @return iterable<callable>

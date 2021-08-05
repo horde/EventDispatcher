@@ -57,10 +57,10 @@ class EventDispatcher implements EventDispatcherInterface
 
     /**
      * Dispatch an event to all relevant listeners.
-     * 
+     *
      * An event may be any object, no specific markers or base classes needed.
      * Events may form a hierarchy by common interfaces or inheritance.
-     * 
+     *
      * @param object $event
      *   The object to process.
      *
