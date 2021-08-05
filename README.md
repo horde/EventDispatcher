@@ -1,6 +1,6 @@
 # EventDispatcher
 
-![example workflow](https://github.com/maintaina-com/EventDispather/actions/workflows/ci/badge.svg)
+![Unit Tests](https://github.com/maintaina-com/eventdispatcher/actions/workflows/ci.yml/badge.svg)
 
 A simple PSR-14 EventDispatcher / ListenerProvider system for Horde
 This library contains a simple EventDispatcher and one simple ListenerProvider using functionality from fig/eventdispatcher-util.
