@@ -9,4 +9,5 @@
     identifier: BSD-3-Clause
     uri: http://www.horde.org/licenses/bsd
   notes: |
+    [rla] Remove support for Non-PSR 3 loggers, Horde\Log now has a PSR-3 version.
     [rla] First alpha release.

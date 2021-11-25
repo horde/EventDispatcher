@@ -12,9 +12,16 @@
  */
 declare(strict_types=1);
 namespace Horde\EventDispatcher;
+
+use Horde\Log\Logger;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\EventDispatcher\ListenerProviderInterface;
 use Psr\EventDispatcher\StoppableEventInterface;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
+
 /**
  * The EventDispatcher class implements PSR-14 EventDispatcherInterface
  *
@@ -30,14 +37,16 @@ use Psr\EventDispatcher\StoppableEventInterface;
 class EventDispatcher implements EventDispatcherInterface
 {
     /**
+     * The logger instance. We prefer the Null logger over null.
+     *
+     * @var LoggerInterface
+     */
+    protected LoggerInterface $logger;
+
+    /**
      * @var ListenerProviderInterface
      */
     private ListenerProviderInterface $listenerProvider;
-
-    /**
-     * @var \Horde_Log_Logger|LoggerInterface
-     */
-    private ?object $logger;
 
     /**
      * Constructor
@@ -47,12 +56,13 @@ class EventDispatcher implements EventDispatcherInterface
      * This is not necessary as ListenerProviders may be containers of other ListenerProviders
      *
      * @param ListenerProviderInterface $listenerProvider
-     * @param \Horde_Log_Logger|LoggerInterface An optional logger TBD
+     * @param LoggerInterface $logger An optional PSR-3 logger
      */
-    public function __construct(ListenerProviderInterface $listenerProvider, object $logger = null)
+    public function __construct(ListenerProviderInterface $listenerProvider, LoggerInterface $logger = null)
     {
         $this->listenerProvider = $listenerProvider;
-        $this->logger = $logger;
+        // Prevent having to use if checks
+        $this->logger = $logger ?? new NullLogger;
     }
 
     /**
@@ -61,7 +71,7 @@ class EventDispatcher implements EventDispatcherInterface
      * An event may be any object, no specific markers or base classes needed.
      * Events may form a hierarchy by common interfaces or inheritance.
      *
-     * @param object $event
+     * @param object|StoppableEventInterface $event
      *   The object to process.
      *
      * @return object
@@ -69,14 +79,34 @@ class EventDispatcher implements EventDispatcherInterface
      */
     public function dispatch(object $event): object
     {
+        $log = 'Event {eventType} dispatched to {listenerId}:{listenerType}';
+        // When moving to PHP 8, we can use ::class on variables
+        $eventType = get_class($event);
         $listeners = $this->listenerProvider->getListenersForEvent($event);
 
         $isStoppable = $event instanceof StoppableEventInterface;
-        foreach ($listeners as $listener) {
+        foreach ($listeners as $id => $listener) {
+            // PHPStan does not get that check
+            // @phpstan-ignore-next-line
             if ($isStoppable && $event->isPropagationStopped()) {
                 break;
             }
             // The listener may be any callable
+            if (is_object($listener)) {
+                $listenerType = get_class($listener);
+            } else {
+                $listenerType = gettype($listener);
+            }
+
+            $this->logger->debug(
+                $log,
+                [
+                    'library' => self::class,
+                    'eventType' => $eventType,
+                    'listenerId' => (string) $id,
+                    'listenerType' => $listenerType
+                ]                
+            );
             $listener($event);
         }
         return $event;
