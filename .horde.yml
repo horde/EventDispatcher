@@ -2,8 +2,7 @@
 id: EventDispatcher
 name: EventDispatcher
 full: A simple PSR-14 EventDispatcher / ListenerProvider system for Horde
-description: >-
-  A Horde implementation of PSR-14
+description: A Horde implementation of PSR-14
 list: dev
 type: library
 authors:
@@ -41,4 +40,3 @@ dependencies:
     composer:
       horde/log: ^3
       horde/test: ^3
-  
