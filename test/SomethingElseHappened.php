@@ -7,5 +7,5 @@ namespace Horde\EventDispatcher\Test;
  */
 class SomethingElseHappened
 {
-
+    public bool $handled = false;
 }

@@ -13,14 +13,18 @@ use \PHPUnit\Framework\TestCase;
  */
 class BasicDispatchTest extends TestCase
 {
-    public function testOnlyMatchingDispatcher()
+    public function testDispatcherReturnsEvents()
     {
         $matchingEvent = new SomethingHappened;
+        $nonmatchingEvent = new SomethingElseHappened;
         $listenerProvider = new SimpleListenerProvider();
         $listenerProvider->addListener(new SomethingHappenedListener);
         $dispatcher = new EventDispatcher($listenerProvider);
         $res = $dispatcher->dispatch($matchingEvent);
         $this->assertInstanceOf(SomethingHappened::class, $res);
-    }
-
+        $this->assertTrue($res->handled);
+        $res = $dispatcher->dispatch($nonmatchingEvent);
+        $this->assertFalse($res->handled);
+        $this->assertInstanceOf(SomethingElseHappened::class, $res);
+     }
 }

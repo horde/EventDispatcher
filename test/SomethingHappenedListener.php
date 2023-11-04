@@ -6,6 +6,7 @@ class SomethingHappenedListener
 {
     public function __invoke(SomethingHappened $event)
     {
+        $event->handled = true;
         return $event;
     }
 }
