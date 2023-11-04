@@ -58,7 +58,7 @@ class SimpleListenerProvider implements ListenerProviderInterface
     {
         foreach ($this->listeners as $listener) {
             $type = $this->getParameterType($listener);
-            if ($event instanceof $type) {
+            if ($type == 'object' or $event instanceof $type) {
                 yield $listener;
             }
         }

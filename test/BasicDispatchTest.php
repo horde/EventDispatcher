@@ -26,5 +26,17 @@ class BasicDispatchTest extends TestCase
         $res = $dispatcher->dispatch($nonmatchingEvent);
         $this->assertFalse($res->handled);
         $this->assertInstanceOf(SomethingElseHappened::class, $res);
-     }
+    }
+
+    public function testMatchAnything()
+    {
+        $matchingEvent = new SomethingHappened;
+        $listenerProvider = new SimpleListenerProvider();
+        $listenerProvider->addListener(new MatchAnythingListener);
+        $dispatcher = new EventDispatcher($listenerProvider);
+        $res = $dispatcher->dispatch($matchingEvent);
+        $this->assertInstanceOf(SomethingHappened::class, $res);
+        $this->assertTrue($res->handled);
+
+    }
 }
