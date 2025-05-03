@@ -50,7 +50,7 @@ class EventDispatcher implements EventDispatcherInterface
 
     /**
      * Constructor
-     * 
+     *  
      * Set up the dispatcher with a listener provider
      * Some implementations use an array of listener providers.
      * This is not necessary as ListenerProviders may be containers of other ListenerProviders
@@ -58,7 +58,7 @@ class EventDispatcher implements EventDispatcherInterface
      * @param ListenerProviderInterface $listenerProvider
      * @param LoggerInterface $logger An optional PSR-3 logger
      */
-    public function __construct(ListenerProviderInterface $listenerProvider, LoggerInterface $logger = null)
+    public function __construct(ListenerProviderInterface $listenerProvider, ?LoggerInterface $logger = null)
     {
         $this->listenerProvider = $listenerProvider;
         // Prevent having to use if checks
@@ -86,8 +86,6 @@ class EventDispatcher implements EventDispatcherInterface
 
         $isStoppable = $event instanceof StoppableEventInterface;
         foreach ($listeners as $id => $listener) {
-            // PHPStan does not get that check
-            // @phpstan-ignore-next-line
             if ($isStoppable && $event->isPropagationStopped()) {
                 break;
             }

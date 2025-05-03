@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "php": "^7.4 || ^8",
+        "php": "^8",
         "horde/exception": "^3 || dev-FRAMEWORK_6_0",
         "psr/event-dispatcher": "^1.0.0",
         "fig/event-dispatcher-util": "^1.3",
