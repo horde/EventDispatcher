@@ -1,16 +1,17 @@
 ---
-1.0.0alpha2:
-  api: 1.0.0alpha1
+1.0.0-alpha2:
+  api: 1.0.0-alpha1
   state:
-    release: alpha
-    api: alpha
-  date: 2021-08-05
+    release: true
+    api: true
+  date: 2025-05-03
   license:
     identifier: BSD-3-Clause
     uri: http://www.horde.org/licenses/bsd
-  notes: |+
-    
-1.0.0alpha1:
+  notes: |
+    feat: Upgrade CI pipeline to phpunit 12, phpstan level 5
+    feat: PHP8.4 compatibility, phpstan level 5
+1.0.0-alpha1:
   api: 1.0.0alpha1
   state:
     release: alpha1
@@ -20,5 +21,6 @@
     identifier: BSD-3-Clause
     uri: http://www.horde.org/licenses/bsd
   notes: |
+    Original version string was 1.0.0alpha1
     [rla] Remove support for Non-PSR 3 loggers, Horde\Log now has a PSR-3 version.
     [rla] First alpha release.

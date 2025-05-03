@@ -1,5 +1,4 @@
 {
-    "minimum-stability": "dev",
     "name": "horde/eventdispatcher",
     "description": "A simple PSR-14 EventDispatcher / ListenerProvider system for Horde",
     "type": "library",
@@ -12,16 +11,11 @@
             "role": "lead"
         }
     ],
-    "time": "2021-11-25",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://horde-satis.maintaina.com/"
-        }
-    ],
+    "time": "2025-05-03",
+    "repositories": [],
     "require": {
         "php": "^8",
-        "horde/exception": "^3 || dev-FRAMEWORK_6_0",
+        "horde/exception": "^3",
         "psr/event-dispatcher": "^1.0.0",
         "fig/event-dispatcher-util": "^1.3",
         "ext-pcre": "*",
@@ -29,12 +23,11 @@
         "ext-spl": "*"
     },
     "require-dev": {
-        "horde/log": "^3 || dev-FRAMEWORK_6_0",
-        "horde/test": "^3 || dev-FRAMEWORK_6_0",
-        "phpunit/phpunit": "^12"
+        "horde/log": "^3",
+        "phpunit/phpunit": "^10 || ^11 || ^12"
     },
     "suggest": {
-        "horde/log": "^3 || dev-FRAMEWORK_6_0",
+        "horde/log": "^3",
         "psr/log": "^1.1.4"
     },
     "autoload": {
@@ -42,9 +35,10 @@
             "Horde\\EventDispatcher\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Horde\\EventDispatcher\\Test\\": "test/"
+    "autoload-dev": {},
+    "config": {
+        "allow-plugins": {
+            "horde/horde-installer-plugin": true
         }
     }
 }
