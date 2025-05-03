@@ -30,7 +30,8 @@
     },
     "require-dev": {
         "horde/log": "^3 || dev-FRAMEWORK_6_0",
-        "horde/test": "^3 || dev-FRAMEWORK_6_0"
+        "horde/test": "^3 || dev-FRAMEWORK_6_0",
+        "phpunit/phpunit": "^12"
     },
     "suggest": {
         "horde/log": "^3 || dev-FRAMEWORK_6_0",

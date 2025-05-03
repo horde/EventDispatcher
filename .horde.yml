@@ -39,4 +39,4 @@ dependencies:
   dev:
     composer:
       horde/log: ^3
-      horde/test: ^3
+      phpunit/phpunit: "^10 || ^11 || ^12"
