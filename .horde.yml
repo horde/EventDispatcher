@@ -13,10 +13,10 @@ authors:
     active: true
     role: lead
 version:
-  release: 1.0.0-alpha2
+  release: 1.0.0-beta1
   api: 1.0.0alpha1
 state:
-  release: alpha
+  release: beta
   api: alpha
 license:
   identifier: BSD-3-Clause
@@ -40,3 +40,4 @@ dependencies:
     composer:
       horde/log: ^3
       phpunit/phpunit: ^10 || ^11 || ^12
+vendor: horde
