@@ -36,6 +36,7 @@ tools/
 .php-cs-fixer.cache
 .phpunit.cache/
 composer.lock
+coverage/
 
 # Added by horde-components QC --fix-qc-issues
 # Build artifacts directory
