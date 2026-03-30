@@ -434,12 +434,9 @@ Horde_PubSub::publish('user.registered', $user, new \DateTimeImmutable());
 
 ## Migration Status
 
-**PubSub is not officially deprecated**, but new development should consider EventDispatcher when:
-- The use case fits the domain event model
-- Type safety provides value
-- PSR-14 compatibility is desired
-
-Existing PubSub code can remain unchanged. Migration is only recommended when refactoring or when the benefits justify the effort.
+**PubSub is not officially deprecated**, but new development should consider EventDispatcher as the first choice.
+See reasoning above and decide yourself. Existing PubSub code can remain unchanged.
+Migration is recommended when refactoring or when the benefits justify the effort.
 
 ## Further Reading
 
