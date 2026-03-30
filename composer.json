@@ -7,11 +7,16 @@
     "authors": [
         {
             "name": "Ralf Lang",
-            "email": "lang@b1-systems.de",
+            "email": "ralf.lang@ralf-lang.de",
             "role": "lead"
         }
     ],
-    "time": "2026-03-15",
+    "keywords": [
+        "events",
+        "event-dispatcher",
+        "psr-14"
+    ],
+    "time": "2026-03-30",
     "repositories": [],
     "require": {
         "php": "^8",
@@ -23,8 +28,7 @@
         "ext-spl": "*"
     },
     "require-dev": {
-        "horde/log": "^3 || dev-FRAMEWORK_6_0",
-        "phpunit/phpunit": "^10 || ^11 || ^12"
+        "horde/log": "^3 || dev-FRAMEWORK_6_0"
     },
     "suggest": {
         "horde/log": "^3 || dev-FRAMEWORK_6_0",

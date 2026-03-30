@@ -3,17 +3,21 @@ id: EventDispatcher
 name: EventDispatcher
 full: A simple PSR-14 EventDispatcher / ListenerProvider system for Horde
 description: A Horde implementation of PSR-14
+keywords:
+  - events
+  - event-dispatcher
+  - psr-14
 list: dev
 type: library
 authors:
   -
     name: Ralf Lang
-    user: lang
-    email: lang@b1-systems.de
+    user: rlang
+    email: ralf.lang@ralf-lang.de
     active: true
     role: lead
 version:
-  release: 1.0.0-beta1
+  release: 1.0.0-beta2
   api: 1.0.0alpha1
 state:
   release: beta
@@ -39,5 +43,7 @@ dependencies:
   dev:
     composer:
       horde/log: ^3
-      phpunit/phpunit: ^10 || ^11 || ^12
+  provide:
+    composer:
+      psr/event-dispatcher-implementation: 1.0
 vendor: horde
