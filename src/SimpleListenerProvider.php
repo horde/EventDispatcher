@@ -1,11 +1,11 @@
 <?php
 /**
- * Copyright 2021 Horde LLC (http://www.horde.org/)
+ * Copyright 2021-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
  *
- * @author   Ralf Lang <lang@b1-systems.de>
+ * @author   Ralf Lang <ralf.lang@ralf-lang.de>
  * @category Horde
  * @license  http://www.horde.org/licenses/bsd BSD-3-Clause
  * @package  EventDispatcher
@@ -20,9 +20,9 @@ use Psr\EventDispatcher\ListenerProviderInterface;
  * A basic container of Listeners
  * All listeners are returned that match any of the event's interfaces
  *
- * @author    Ralf Lang <lang@b1-systems.de>
+ * @author    Ralf Lang <ralf.lang@ralf-lang.de>
  * @category  Horde
- * @copyright 2021 Horde LLC
+ * @copyright 2021-2026 Horde LLC
  * @license   http://www.horde.org/licenses/bsd BSD-3-Clause
  * @package   EventDispatcher
  */
