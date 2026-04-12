@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2021-2026 Horde LLC (http://www.horde.org/)
  *
@@ -11,6 +12,7 @@
  * @package  EventDispatcher
  */
 declare(strict_types=1);
+
 namespace Horde\EventDispatcher;
 
 use Horde\Log\Logger;
@@ -27,7 +29,7 @@ use Psr\Log\NullLogger;
  *
  * Not "final" on purpose. Formally extending is a viable and cheap strategy
  * for DI Autowiring, even though wrapping would be cleaner.
- * 
+ *
  * @author    Ralf Lang <ralf.lang@ralf-lang.de>
  * @category  Horde
  * @copyright 2021-2026 Horde LLC
@@ -50,7 +52,7 @@ class EventDispatcher implements EventDispatcherInterface
 
     /**
      * Constructor
-     *  
+     *
      * Set up the dispatcher with a listener provider
      * Some implementations use an array of listener providers.
      * This is not necessary as ListenerProviders may be containers of other ListenerProviders
@@ -62,7 +64,7 @@ class EventDispatcher implements EventDispatcherInterface
     {
         $this->listenerProvider = $listenerProvider;
         // Prevent having to use if checks
-        $this->logger = $logger ?? new NullLogger;
+        $this->logger = $logger ?? new NullLogger();
     }
 
     /**
@@ -102,8 +104,8 @@ class EventDispatcher implements EventDispatcherInterface
                     'library' => self::class,
                     'eventType' => $eventType,
                     'listenerId' => (string) $id,
-                    'listenerType' => $listenerType
-                ]                
+                    'listenerType' => $listenerType,
+                ]
             );
             $listener($event);
         }
