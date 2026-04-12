@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2021-2026 Horde LLC (http://www.horde.org/)
  *
@@ -11,9 +12,12 @@
  * @package  EventDispatcher
  */
 declare(strict_types=1);
+
 namespace Horde\EventDispatcher;
+
 use Fig\EventDispatcher\ParameterDeriverTrait;
 use Psr\EventDispatcher\ListenerProviderInterface;
+
 /**
  * Simple ListenerProvider
  *
@@ -54,7 +58,7 @@ class SimpleListenerProvider implements ListenerProviderInterface
      *   An iterable (array, iterator, or generator) of callables.  Each
      *   callable MUST be type-compatible with $event.
      */
-    public function getListenersForEvent(object $event) : iterable
+    public function getListenersForEvent(object $event): iterable
     {
         foreach ($this->listeners as $listener) {
             $type = $this->getParameterType($listener);

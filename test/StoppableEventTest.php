@@ -9,6 +9,7 @@ use Horde\EventDispatcher\SimpleListenerProvider;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\AbstractLogger;
+use Stringable;
 
 /**
  * Tests for StoppableEventInterface support (PSR-14 requirement)
@@ -133,7 +134,7 @@ class StoppableEventTest extends TestCase
         $logger = new class extends AbstractLogger {
             public array $logs = [];
 
-            public function log($level, string|\Stringable $message, array $context = []): void
+            public function log($level, string|Stringable $message, array $context = []): void
             {
                 $this->logs[] = [
                     'level' => $level,
