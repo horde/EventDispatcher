@@ -47,3 +47,6 @@ dependencies:
     composer:
       psr/event-dispatcher-implementation: 1.0
 vendor: horde
+quality:
+  phpstan:
+    level: 8
