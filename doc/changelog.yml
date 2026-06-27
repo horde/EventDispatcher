@@ -1,4 +1,14 @@
 ---
+1.0.0:
+  api: 1.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2026-06-27
+  license:
+    identifier: BSD-3-Clause
+    uri: https://spdx.org/licenses/BSD-3-Clause.html
+  notes: "chore: refresh qc fixes and platform deps\nchore: Update workflow dependency"
 1.0.0-beta3:
   api: 1.0.0-beta3
   state:
@@ -8,10 +18,7 @@
   license:
     identifier: BSD-3-Clause
     uri: https://spdx.org/licenses/BSD-3-Clause.html
-  notes: |-
-    chore: phpstan watermark
-    style: php-cs-fixer
-    feat: NullEventDispatcher - a dependency-less Black Hole libraries can default to.
+  notes: "chore: phpstan watermark\nstyle: php-cs-fixer\nfeat: NullEventDispatcher - a dependency-less Black Hole libraries can default to."
 1.0.0-beta2:
   api: 1.0.0-beta2
   state:
@@ -21,12 +28,7 @@
   license:
     identifier: BSD-3-Clause
     uri: https://spdx.org/licenses/BSD-3-Clause.html
-  notes: |-
-    docs: PUBSUB.md compares EventDispatcher and PubSub libraries
-    docs: PUBSUB.md compares EventDispatcher and PubSub libraries
-    chore(gitignore): Update gitignore file with framework defaults
-    test: Add more comprehensive tests
-    chore: It was good while it lasted.
+  notes: "docs: PUBSUB.md compares EventDispatcher and PubSub libraries\ndocs: PUBSUB.md compares EventDispatcher and PubSub libraries\nchore(gitignore): Update gitignore file with framework defaults\ntest: Add more comprehensive tests\nchore: It was good while it lasted."
 1.0.0-beta1:
   api: 1.0.0-beta1
   state:
@@ -36,9 +38,7 @@
   license:
     identifier: BSD-3-Clause
     uri: https://spdx.org/licenses/BSD-3-Clause.html
-  notes: |-
-    fix: yaml broken dependencies key
-    Update composer.json
+  notes: "fix: yaml broken dependencies key\nUpdate composer.json"
 1.0.0-alpha2:
   api: 1.0.0-alpha1
   state:
@@ -48,9 +48,7 @@
   license:
     identifier: BSD-3-Clause
     uri: http://www.horde.org/licenses/bsd
-  notes: |
-    feat: Upgrade CI pipeline to phpunit 12, phpstan level 5
-    feat: PHP8.4 compatibility, phpstan level 5
+  notes: "feat: Upgrade CI pipeline to phpunit 12, phpstan level 5\nfeat: PHP8.4 compatibility, phpstan level 5\n"
 1.0.0-alpha1:
   api: 1.0.0alpha1
   state:
@@ -60,7 +58,4 @@
   license:
     identifier: BSD-3-Clause
     uri: http://www.horde.org/licenses/bsd
-  notes: |
-    Original version string was 1.0.0alpha1
-    [rla] Remove support for Non-PSR 3 loggers, Horde\Log now has a PSR-3 version.
-    [rla] First alpha release.
+  notes: "Original version string was 1.0.0alpha1\n[rla] Remove support for Non-PSR 3 loggers, Horde\\Log now has a PSR-3 version.\n[rla] First alpha release.\n"
